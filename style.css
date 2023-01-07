@@ -1472,8 +1472,7 @@ i.icon-white {
 
 @media (max-width : 330px) {
 	.navbar-inner h1 {
-		margin-top: 18px !important;
-		font-size: 4vw !important;
+		display: none !important;
 	}
 
 	#contact p {
