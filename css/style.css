@@ -1371,6 +1371,11 @@ i.icon-white {
 	 padding-right: 20px;
 	 padding-left: 20px;
 	}	
+
+	.flexslider p {
+		font-size: 10vw !important;
+	}
+
   /* works */
 
 	#works img {
@@ -1407,7 +1412,7 @@ i.icon-white {
 	}
 
 	.flexslider p {
-		font-size: 8px;
+		font-size: 10vw !important;
 	}
 
 	#team .team-thumb {
@@ -1445,8 +1450,6 @@ i.icon-white {
  margin-left: auto;
  display: block;
 }
- 
-		
 
 /* team */
 		
@@ -1467,13 +1470,14 @@ i.icon-white {
 /* more smaller */
 
 @media (max-width : 320px) {
-	.navbar-inner h1 a {
-		font-size: 22px !important;
+	.navbar-inner h1 {
+		margin-top: 24px !important;
+		font-size: 4vw !important;
 	}
 
-	.flexslider p {
-		font-size: 38px !important;
-	}
+	/* .flexslider p {
+		font-size: 32px !important;
+	} */
 
 	#contact p {
 	 font-size: 6vw !important;
