@@ -801,6 +801,7 @@ section#about {
 }
 
 /* works */
+
 #works h2 {
 	color: white;
 	font-weight: bold;
@@ -809,8 +810,8 @@ section#about {
 }
 
 #works img {
-	width: 300px;
-	height: 120px;
+	width: 100%;
+	height: 180px;
 	object-fit: cover;
 }
 
@@ -1469,15 +1470,11 @@ i.icon-white {
 
 /* more smaller */
 
-@media (max-width : 320px) {
+@media (max-width : 330px) {
 	.navbar-inner h1 {
 		margin-top: 24px !important;
 		font-size: 4vw !important;
 	}
-
-	/* .flexslider p {
-		font-size: 32px !important;
-	} */
 
 	#contact p {
 	 font-size: 6vw !important;
