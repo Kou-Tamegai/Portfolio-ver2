@@ -411,8 +411,6 @@ header .logo {
 	-o-box-shadow: none;
 }
 
-
-
 /* --- Header subscribe form --- */
 
 #header-wrapper input[type=text] {
@@ -467,8 +465,6 @@ section.section h4 {
 section.inner {
 	padding: 50px 0 50px;
 }
-
-
 
 .section.orange h4 ,.section.green h4{
 	color: #fcfcfc;
@@ -580,9 +576,6 @@ section.spacer blockquote cite {
 #filters ul li a:hover h5, #filters ul li a.active h5 {
 	color:#fcfcfc;
 }
-
-
-
 
 /* === portfolio wrap - grid === */
 #portfolio-wrap {
@@ -1228,84 +1221,6 @@ i.icon-white {
   background-color: #065158 \9;
 }
 
-/* .btn-warning {
-  color: #ffffff;
-  text-shadow: none;
-  background-color: #ffe873;
-  *background-color: #ffe873;
-  background-image: none;
-  border-color: none;
-  filter:none;
-}
-
-.btn-warning:hover,
-.btn-warning:focus,
-.btn-warning:active,
-.btn-warning.active,
-.btn-warning.disabled,
-.btn-warning[disabled] {
-  color: #ffffff;
-  background: #b88f22;
-  *background: #b88f22;
-}
-
-.btn-warning:active,
-.btn-warning.active {
-  background: #b88f22 \9;
-}
-
-
-.btn-danger {
-  color: #ffffff;
-  text-shadow: none;
-  background-color: #f36f36;
-  *background-color: #f36f36;
-  background-image: none;
-  border-color: none;
-  filter:none;
-}
-
-.btn-danger:hover,
-.btn-danger:focus,
-.btn-danger:active,
-.btn-danger.active,
-.btn-danger.disabled,
-.btn-danger[disabled] {
-  color: #ffffff;
-  background: #db5f58;
-  *background: #db5f58;
-}
-
-.btn-danger:active,
-.btn-danger.active {
-  background: #db5f58 \9;
-}
-
-.btn-success {
-  color: #ffffff;
-  text-shadow: none;
-  background-color: #1bac91;
-  *background-color: #1bac91;
-  background-image: none;
-  border-color: none;
-  filter:none;
-}
-
-.btn-success:hover,
-.btn-success:focus,
-.btn-success:active,
-.btn-success.active,
-.btn-success.disabled,
-.btn-success[disabled] {
-  color: #ffffff;
-  background: #55ba93;
-  *background: #55ba93;
-}
-
-.btn-success:active,
-.btn-success.active {
-  background: #55ba93 \9;
-} */
 
 .btn-info {
   color: #ffffff;
@@ -1491,6 +1406,10 @@ i.icon-white {
 		padding-top:80px;
 	}
 
+	.flexslider p {
+		font-size: 8px;
+	}
+
 	#team .team-thumb {
 		 margin-right: auto;
 		 margin-left: auto;
@@ -1508,8 +1427,6 @@ i.icon-white {
 		height: 240px;
 		object-fit: cover;
 	}
-	
-
 
 }
     
@@ -1540,12 +1457,25 @@ i.icon-white {
  display: block;
  text-align:center
 }
- .job-position: {
- margin-bottom: 1.5em;
-}
  .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
  margin-left: auto;
  margin-right: auto;
 }
-		
 
+}
+
+/* more smaller */
+
+@media (max-width : 320px) {
+	.navbar-inner h1 a {
+		font-size: 22px !important;
+	}
+
+	.flexslider p {
+		font-size: 38px !important;
+	}
+
+	#contact p {
+	 font-size: 6vw !important;
+	}
+}
