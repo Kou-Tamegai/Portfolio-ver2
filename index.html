@@ -10,22 +10,35 @@
 	<link href="css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="color/default.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 	<link rel="shortcut icon" href="img/favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<!-- =======================================================
     
 	======================================================= -->
 </head>
 
 <body>
+	<div class="overlay">
+    <div class="welcome-message">
+      <div class="name">
+				<p>Welcome to my portfolio!</p>
+			</div>
+    </div>
+  </div>
+	
+
 	<!-- navbar -->
 	<div class="navbar-wrapper">
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
+					<div id="title-and-bar">
+						<h1 class="brand myname"><a href="index.html">Kou Tamegai</a></h1>
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+						</a>
+					</div>
 					<!-- Responsive navbar -->
-					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-				</a>
-					<h1 class="brand"><a href="index.html">Kou Tamegai</a></h1>
 					<!-- navigation -->
 					<nav class="pull-right nav-collapse collapse">
 						<ul id="menu-main" class="nav">
@@ -43,7 +56,7 @@
 	<div id="header-wrapper" class="header-slider">
 		<header class="clearfix">
 			<div class="logo">
-				<img src="img/Icon3.png" width="140" alt="アイコン" />
+				<img src="img/others/Icon3.png" width="140" alt="アイコン" />
 			</div>
 			<div class="container">
 				<div class="row">
@@ -75,6 +88,7 @@
 		</header>
 	</div>
 	<!-- spacer section -->
+
 	<section class="spacer green">
 		<div class="container">
 			<div class="row">
@@ -123,81 +137,183 @@
 		<div class="container">
 			<h4 class="flyIn">Who I am</h4>
 			<div class="row">
-				<div class="span4 offset1 flyLeft">
-					<div>
-						<h2>Make Peaple <strong>Happy</strong></h2>
-						<p>
-							為我井孝:明治大学文学部 英米文学専攻
-						</p>
-						<p>小学校から中学校2年までサッカー少年でした。中3から本格的に陸上を始めるも、高2で怪我をして引退。</p>
-						<p>小さい頃からハリウッドやディズニー等洋画を見ていた影響で英語に興味があり、英米文学専攻を志望。</p>
-						<p>大学1,2年次は英語や文学の勉強を中心にするも、幸福学を勉強した影響で、人の役に立つスキルを習得しようと思い立つ。</p>
-						<p>休学しプログラミングを勉強。HTML, CSS,Javascriptから始め最近はReact中心に勉強中。</p>
+				<div>
+					<div class="aligncenter flyLeft">
+						<img id="MyImage" class="team-thumb img-circle" src="img/others/MyIcon (1).jpg" width="300" />
+					</div>
+				</div>
+				<div class="flyRight accordion-desc">
+
+					<div class="acc-container">
+						<div class="acc-btn"><h1>Kou Tamegai</h1></div>
+						<div class="acc-content">
+							<h3>為我井孝</h3>
+							<p>明治大学文学部 英米文学専攻</p>
+						</div>
 						
-					</div>
+						<div class="acc-btn"><h1>略歴</h1></div>
+						<div class="acc-content">
+							<p>小学校1年〜中学校2年までサッカーに明け暮れる。中3から本格的に陸上を始めるも、高2で怪我をして引退。</p>
+							<p>怪我で走れなくなり、人生最大レベルで落ち込むも、自分と同じような境遇の人を助けたいとスポーツトレーナーを目指す。しかし受験勉強中に、英語の面白さに目覚め、英米文学に専攻を変更。</p>
+							<p>大学1,2年次は英語や文学の勉強を中心にするも、幸福学を勉強した影響で、人の役に立つスキルを習得しようと思い立つ。</p>
+							<p>休学しプログラミングを勉強。インターン生ながら開発部門の責任者を務める。</p>
+						</div>
+						</div>
 				</div>
-				<div class="span6">
-					<div class="aligncenter flyRight">
-						<img id="MyImage" src="img/MyIcon.jpg" width="300" />
-					</div>
-				</div>
-			</div>
+			</div>			
+
 			<div class="row">
-				<h2 id="myStrength">My Strength</h2>
-				<div class="span2 offset1 flyIn">
-					<div class="people">
-						<img class="team-thumb img-circle" src="img/team/img-1.jpg" />
-						<h3>技術力</h3>
-						<p>
-							HTML、CSS、Javascript、React、Typescriptを勉強中。
-						</p>
+
+				<!-- 表示するモーダル -->
+				
+					<div class="modal-wrapper" id="modal-01">
+						<a href="#modal-01" class="modal-overlay"></a>
+						<div class="modal-window">
+							<div class="modal-content">
+								<h3 class="modal_title">技術力</h3>
+								<p>インターン先で開発部門の責任者を務め、<strong>RailsやReactを用いて開発</strong>を主に行っています。</p>
+								<p>フロントエンドはReact,Typescript,next.js等、バックエンドはRails,データベースはPostgresSQLを用いて実装しております。</p>
+								<p>初めは分からないことしかありませんでしたが、「ここで技術を身につけて、<strong>社会貢献出来る人材になる</strong>」ということを強く意識しながら業務に取り組ませて頂きました。</p>
+							</div>
+							<a href="#!" class="modal-close"><i class="far fa-times-circle"></i></a>
+						</div>
 					</div>
-				</div>
+
+					<div class="modal-wrapper" id="modal-02">
+						<a href="#modal-02" class="modal-overlay"></a>
+						<div class="modal-window">
+							<div class="modal-content">
+								<h3 class="modal_title">英語力</h3>
+								<p><strong>TOEIC920点、英検準1級</strong>保持。</p>
+								<p>初めはTOEICで900点取れば英語がペラペラになると勘違いしていました。しかし実際取ったのに全く話せないことに気づき、その日からHello Talkで外国人にひたすら電話をかけました。</p>
+								<p>そこからオンライン英会話の存在を知り、ひたすら英語を話し続け、<strong>数百人以上の外国人と話してきました</strong>。また休学中には英会話講師の職にも就き、英語学習中の日本人の相談に乗りました。</p>
+							</div>
+							<a href="#!" class="modal-close"><i class="far fa-times-circle"></i></a>
+						</div>
+					</div>
+
+					<div class="modal-wrapper" id="modal-03">
+						<a href="#modal-03" class="modal-overlay"></a>
+						<div class="modal-window">
+							<div class="modal-content">
+								<h3 class="modal_title">好奇心</h3>
+								<p>新しいことを始めるのが大好きで、今までにも色んな勉強をしてきました。</p>
+								<p>プログラミングは勿論、簿記、心理学、幸福学、行動経済学、英会話...新しい技術のキャッチアップにも積極的です</p>
+								<p>また<strong>面白いと思ったことは突き詰める</strong>タイプなので、同じ映画を100回以上見たりもします。</p>
+								<p><strong>エンジニアにとって好奇心は非常に重要な資質</strong>だと思っています。作業をワクワクしながら出来るか、という点では好奇心が大事です。</p>
+							</div>
+							<a href="#!" class="modal-close"><i class="far fa-times-circle"></i></a>
+						</div>
+					</div>
+
+					<div class="modal-wrapper" id="modal-04">
+						<a href="#modal-04" class="modal-overlay"></a>
+						<div class="modal-window">
+							<div class="modal-content">
+								<h3 class="modal_title">バズリ力</h3>
+								<p>休学中に趣味で始めたYouTubeでは300万回再生を記録。バズリには運要素もありますが、YouTubeのアナリティクス機能やGoogleトレンドなどの分析ツールを用いて確率を上げられるということを学びました。</p>
+								<p><strong>「バズる」ことはネット社会の現代において非常に重要</strong>だと思っています。</p>
+								<p>例えば社会貢献をしたくて、クラウドファンディングで資金を集めたいとなった時、どれだけ立派な行いをして、見た人の共感を集めたとしても、<strong>そもそも知って貰えなければ意味がありません。</strong></p>
+								<p>様々な目的を達成する第一段階として、まずそれについて知って貰う必要があります。そのために、「バズらせる力」は重要なものだと考えています。</p>
+							</div>
+							<a href="#!" class="modal-close"><i class="far fa-times-circle"></i></a>
+						</div>
+					</div>
+
+					<div class="modal-wrapper" id="modal-05">
+						<a href="#modal-05" class="modal-overlay"></a>
+						<div class="modal-window">
+							<div class="modal-content">
+								<h3 class="modal_title">幸福学</h3>
+								<p>人がどうしたら幸福になれるのか、ということについて日々考えています。</p>
+								<p>「幸せ」というと非科学的で宗教みたいで怪しいと思うかもしれませんが、<strong>現代では幸せの正体は科学で説明がつきます。</strong></p>
+								<p>幸せとはつまり、幸福物質。ドーパミン、セロトニン、オキシトシンを分泌させていくことが幸せになる具体的なアクションです。しかし、実はドーパミンは依存物質の一種で、また長続きしません。<strong>地位や名誉を得ても続く快楽は一瞬</strong> なので、幸せになるための賢い方法では有りません。</p>
+								<p>ではどうしたら良いのか。それは、オキシトシンの分泌です。具体的には<strong>人を幸せにすることで、オキシトシンが分泌</strong>されます。</p>
+								<p></p>
+							</div>
+							<a href="#!" class="modal-close"><i class="far fa-times-circle"></i></a>
+						</div>
+					</div>
+
+
+				<h2 class="flyIn" id="myStrength">My Strength</h2>
+
+				<!-- クリックする箇所 -->
+					
+					<a href="#modal-01" class="modal-button">
+					<div class="span2 flyIn">
+						<div class="people">
+							<img class="team-thumb img-circle" src="img/team/pro1.jpg" />
+							<h3>技術力</h3>
+							<p>インターン先では開発部門の責任者を務める。主にRails,Reactを用いる。</p>
+						</div>
+					</div>
+				</a>
+				
+			
+			
+				<a href="#modal-02" class="modal-button">
 				<div class="span2 flyIn">
 					<div class="people">
-						<img class="team-thumb img-circle" src="img/team/img-2.jpg" />
+						<img class="team-thumb img-circle" src="img/team/eigo2 (1).jpg" />
 						<h3>英語力</h3>
 						<p>
-							TOEIC920点,英検準1級。英会話講師としても勤務中。
+							TOEIC920点,英検準1級。英会話講師の勤務経験も有り。
 						</p>
 					</div>
 				</div>
+			</a>
+
+
+			<a href="#modal-03" class="modal-button">
 				<div class="span2 flyIn">
 					<div class="people">
-						<img class="team-thumb img-circle" src="img/team/img-3.jpg" />
+						<img class="team-thumb img-circle" src="img/team/koukishin (1).jpg" />
 						<h3>好奇心</h3>
 						<p>
 							専攻外の幸福学、心理学、簿記など好奇心の赴くままに勉強。
 						</p>
 					</div>
 				</div>
+			</a>
+
+			<a href="#modal-04" class="modal-button">
 				<div class="span2 flyIn">
 					<div class="people">
-						<img class="team-thumb img-circle" src="img/team/img-4.jpg" />
+						<img class="team-thumb img-circle" src="img/team/buzz (1).jpg" />
 						<h3>バズリ力</h3>
 						<p>
 							趣味で始めたYouTubeでは300万回再生を記録。
 						</p>
 					</div>
 				</div>
+			</a>
+
+			<a href="#modal-05" class="modal-button">
 				<div class="span2 flyIn">
 					<div class="people">
-						<img class="team-thumb img-circle" src="img/team/img-5.jpg" alt="" />
+						<img class="team-thumb img-circle" src="img/team/happy (1).jpeg" alt="" />
 						<h3>幸福学</h3>
 						<p>
 							幸福学オタク。幸福に関するデータを見るのが趣味。
 						</p>
 					</div>
 				</div>
+			</a>
+
+			</div>
+			</div>
+			 </div>
 			</div>
 		</div>
+	</div>
 		<!-- /.container -->
 	</section>
 	<!-- end section: team -->
 	<!-- section: works -->
 	<section id="works" class="section orange">
 		<div class="container">
-			<h4>Works</h4>
+			<h4 class="flyIn">Works</h4>
 			<!-- Four columns -->
 			<div class="row">
 				<div class="span3 animated-fast flyIn">
@@ -242,10 +358,19 @@
 		</div>
 	</section>
 	<!-- end section: services -->
+
 	<!-- section: works -->
 	<section id="likes" class="section">
 		<div class="container clearfix">
-			<h4>Likes</h4>
+
+			<h3 class="title">
+				<span>L</span>
+				<span>I</span>
+				<span>K</span>
+				<span>E</span>
+				<span>S</span>
+			</h3>
+
 			<!-- portfolio filter -->
 			<div class="row">
 				<div id="filters" class="span12">
@@ -571,20 +696,21 @@
 	<section class="spacer bg3">
 		<div class="container">
 			<div class="row">
-				<div class="span12 aligncenter flyLeft">
-					<blockquote class="large">
-						Do not set aside your happiness. Do not wait to be happy in the future. 
-					</blockquote>
-				</div>
 				<div class="span12 aligncenter flyRight">
-					<blockquote class="large">
-						The best time to be happy is always now.
-					</blockquote>
+					<div class="twitter-display">
+						<h1>Twitter</h1>
+						<p>幸福になる方法、人生が楽しくなる方法を日々発信しています。</p>
+						<p>社会貢献の形には色々ありますが、こうやって幸せになるための知識を発信することも社会貢献の一つと考えています。
+						</p>
+						<a class="twitter-timeline" href="https://twitter.com/tame_happiness?ref_src=twsrc%5Etfw"></a>  
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!-- end spacer section -->
+
+
 	
 	<!-- end spacer section -->
 	<!-- section: contact -->
@@ -629,6 +755,7 @@
 	<script src="js/inview.js"></script>
 	<script src="js/animate.js"></script>
 	<script src="js/custom.js"></script>
+	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 </body>
 

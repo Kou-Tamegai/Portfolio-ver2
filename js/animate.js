@@ -483,7 +483,42 @@ jQuery(document).ready(function($) {
 		$(this).removeClass("animated rollOut");
 		}
 	);
-
-
-
 });
+
+
+// LIKESアニメーション
+
+const CLASSNAME = "-visible";
+const TIMEOUT = 1500;
+const $target = $(".title");
+
+setInterval(() => {
+  $target.addClass(CLASSNAME);
+  setTimeout(() => {
+    $target.removeClass(CLASSNAME);
+  }, TIMEOUT);
+}, TIMEOUT * 2);
+
+// 読み込み時アニメーション
+
+		window.addEventListener('load', function() {
+			setTimeout(function() {
+				var overlay = document.querySelector('.overlay');
+				overlay.classList.add('fadeout');
+				setTimeout(function() {
+					overlay.style.display = 'none';
+				}, 500);
+			}, 3000);
+		});
+
+		// アコーディオン
+
+		$('.acc-btn').click(function(){
+			if ( $(this).next().is( ":hidden" ) ) {
+				$('.acc-content').slideUp('selected');
+				$(this).next().slideDown('selected');
+			} else {
+				$(this).next().slideUp('selected');
+			};
+	});
+	

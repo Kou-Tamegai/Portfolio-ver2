@@ -698,7 +698,7 @@ body { /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
 @-webkit-keyframes fadeInUp {
 	0% {
 		opacity: 0;
-		-webkit-transform: translateY(20px);
+		-webkit-transform: translateY(100px);
 	}
 	
 	100% {
@@ -710,7 +710,7 @@ body { /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
 @-moz-keyframes fadeInUp {
 	0% {
 		opacity: 0;
-		-moz-transform: translateY(20px);
+		-moz-transform: translateY(100px);
 	}
 	
 	100% {
@@ -722,7 +722,7 @@ body { /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
 @-o-keyframes fadeInUp {
 	0% {
 		opacity: 0;
-		-o-transform: translateY(20px);
+		-o-transform: translateY(100px);
 	}
 	
 	100% {
@@ -734,7 +734,7 @@ body { /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
 @keyframes fadeInUp {
 	0% {
 		opacity: 0;
-		transform: translateY(20px);
+		transform: translateY(100px);
 	}
 	
 	100% {
@@ -3276,4 +3276,119 @@ body { /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
     -moz-animation-duration: 0.75s;
     -o-animation-duration: 0.75s;
     animation-duration: 0.75s;
+}
+
+/* LIKESアニメーション */
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+.title {
+  display: flex;
+  overflow: hidden;
+  color: #aa8f7b;
+  font-weight: 700;
+	font-size: 44px;
+	width: 20%;
+	margin: 0 auto 20px;
+	padding: 0 auto;
+}
+
+.title span {
+  display: block;
+  transform: translate(0, 105%);
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 1s;
+}
+
+.title.-visible span {
+  transform: translate(0, 0);
+}
+
+.title span:nth-child(2) {
+  transition-delay: 0.06s;
+}
+.title span:nth-child(3) {
+  transition-delay: 0.12s;
+}
+.title span:nth-child(4) {
+  transition-delay: 0.18s;
+}
+.title span:nth-child(5) {
+  transition-delay: 0.24s;
+}
+
+/* 読み込み時アニメーション */
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
+}
+
+.welcome-message {
+	/* color: #fff;
+	font-size: 420%;
+	font-weight: 800; */
+	text-align: center;
+	animation: fadein 1s forwards;
+}
+
+.name p {
+  font-size: 420%;
+  font-weight: 800;
+  text-align: center;
+  margin: 20px 0px 20px 10px;
+  color: #fff;
+  position: relative;
+  font-family: arno-pro, serif;
+  font-weight: 400;
+  font-style: normal;
+  background-image: linear-gradient(
+    70deg,
+    rgb(211, 209, 209, 0.7) 45%,
+    #fff 50%,
+    rgb(211, 209, 209, 0.7) 55%
+  );
+  background-size: 500% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 5s infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.fadeout {
+	animation: fadeout 0.5s forwards;
+}
+
+@keyframes fadeout {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
 }

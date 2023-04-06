@@ -114,6 +114,22 @@ a.scrollup i:hover {
 
 .row {
 	margin-bottom:30px;
+	text-align: center;
+	margin: 0 auto;
+	display: flex; 
+  justify-content: center;
+  flex-wrap: wrap;
+	position: relative;
+}
+
+.people-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.row .span2 {
+  text-align: center;
 }
 
 .row .row{
@@ -122,6 +138,10 @@ a.scrollup i:hover {
 
 .row.nomargin {
 	margin-bottom:0;
+}
+
+.section-title {
+	color: #aa8f7b;
 }
 
 
@@ -268,7 +288,7 @@ h2.pagetitle {
 	font-size: 1em;
 }
 .alignright {
-	text-align: right;
+	text-align: left;
 }
 .alignleft {
 	text-align: left;
@@ -291,7 +311,7 @@ h2.pagetitle {
 .navbar .brand {
 	margin-left:0;
 	padding: 0;
-	margin-top: 1.05em;
+	margin-top: 1.2em;
 }
 .navbar .brand a {
 	padding: 0;
@@ -343,6 +363,9 @@ ul#menu-main > li > a:focus {
 	text-shadow: none;
 }
 
+.myname {
+	font-family: 'Times',sans-serif;
+}
 
 /* =========================================================
 05. Page sections
@@ -378,6 +401,7 @@ header .logo {
 	text-align:center;
 	margin-bottom:30px;
 }
+
 
 /* --- Header slider --- */
 #header-wrapper.header-slider {
@@ -493,7 +517,11 @@ section.spacer {
 	background:#ffe873;
 }
 .spacer.orange,.section.orange {
-	background:#f36f36;
+	background: url(../img/bg/bgpic.jpg) no-repeat center center fixed;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    margin: 0;
 }
 
 section.spacer.bg2 {
@@ -525,6 +553,78 @@ section.spacer blockquote cite {
 
 .social-contributes blockquote {
 	text-align: left;
+}
+
+/* アコーディオンUI */
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+.accordion-desc {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 5rem;
+}
+
+.acc-container {
+  width: 450px;
+  margin:30px auto 0 auto;
+  -webkit-border-radius:8px;
+  -moz-border-radius:8px;
+  -o-border-radius:8px;
+  border-radius:8px;
+  overflow: hidden;
+	box-sizing: border-box;
+}
+
+.acc-btn { 
+  width:100%;
+  margin:0 auto;
+  padding:6px 4px;
+  cursor:pointer;
+  background:#1bac91;
+  border-bottom:1px solid #2C3E50;
+}
+
+.acc-content {
+  width:100%;
+  margin:0 auto;
+  display: none;
+  background:#1bac92;
+  padding: 20px;
+  height: auto;
+	word-wrap: break-word;
+	box-sizing: border-box;
+}
+
+.acc-container h1 {
+  font:700 20px/26px 'Lato', sans-serif;
+  color:#ffffff;
+	text-align: center;
+}
+
+.acc-container h3 {
+	font:700 20px/26px 'Lato', sans-serif;
+	color:#ffffff;
+	text-align: left;
+}
+
+.acc-container p { 
+  font:400 16px/24px 'Lato', sans-serif;
+  color:#fff;
+	text-align: left;
+}
+
+/* twitter */
+
+.twitter-display {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.twitter-timeline {
+	overflow-y: scroll;
+	max-height: 400px;
 }
 
 /* === section works === */
@@ -583,7 +683,8 @@ section.spacer blockquote cite {
 	padding: 0;
 	width: 100.1%;
 	margin: 0 auto;
-	display: block;
+	display: flex;
+  justify-content: center;
 }
 #portfolio-wrap .grid {
 	margin: 0;
@@ -612,6 +713,7 @@ section.spacer blockquote cite {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	margin: 0 auto;
 }
 .portfolio .portfolio-overlay {
 	width: 100%;
@@ -771,14 +873,186 @@ section#services.section.orange .service-box:hover {
 }
 
 
-/* === section about === */
+/* 追加: My Strengthの中央揃え */
+#myStrength {
+  text-align: center;
+  width: 100%;
+}
+
+/* モーダルウィンドウのスタイル */
+.modal-wrapper {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 40px 10px;
+  text-align: center;
+}
+
+.modal-button {
+    color: #000;
+    font-weight: 500;
+    text-align: center;
+    cursor :pointer;
+    transition: all 0.3s;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 1px;
+    padding: 12px 2px;
+    max-width:300px;
+    text-decoration: none;
+}
+
+.modal-button:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);/*下に動く*/
+
+}
+
+
+
+/*ラベルホバー時*/
+
+.modal-wrapper:not(:target) {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility .3s;
+}
+
+.modal-wrapper:target {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .4s, visibility .4s;
+}
+
+.modal-wrapper::after {
+  display: inline-block;
+  height: 100%;
+  margin-left: -.05em;
+  vertical-align: middle;
+  content: ""
+}
+
+.modal-wrapper .modal-window {
+  box-sizing: border-box;
+  display: inline-block;
+  z-index: 20;
+  position: relative;
+  width: 70%;
+  max-width: 600px;
+  padding: 10px 30px 25px;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .6);
+  vertical-align: middle
+}
+
+.modal-wrapper .modal-window .modal-content {
+  max-height: 80vh;
+  overflow-y: auto;
+  text-align: left
+}
+
+.modal_title {
+  font-size: 1.5em;
+	position: relative;
+	overflow: hidden;
+  padding: 0;
+}
+
+.modal_title::before,
+.modal_title::after{
+	content: "";
+	position: absolute;
+	bottom: 0;
+}
+
+.modal-overlay {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.271)
+}
+
+.modal-wrapper .modal-close {
+  z-index: 20;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 35px;
+  color: #95979c !important;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 35px;
+  text-align: center;
+  text-decoration: none;
+  text-indent: 0
+}
+
+.modal-wrapper h3 {
+	font-weight: 800;
+	text-align: center;
+}
+
+.modal-close:hover {
+  color: #2b2e38 !important
+}
+
+.modal-button:hover {
+	color: #00000070;
+}
+
+/* about共通 */
 
 section#about {
 	background:#f2f2f2;
 }
 
 .people {
+	margin: 0 auto;
 	text-align:center;
+	cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.people h3 {
+	font-size:30px;
+	text-align: center;
+	margin:20px 0px 20px 10px;
+	color: #000000;
+	position: relative;
+	font-weight: 400;
+	font-style: normal;
+	background-image: linear-gradient(
+	70deg,
+	rgba(0, 0, 0, 0.7)  45%, 
+	#fff 50%,
+	rgba(0, 0, 0, 0.7)  45% 
+	);
+	background-size: 500% 100%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	animation: shine 4s infinite;
+}
+
+@keyframes shine {
+0% {
+	background-position: 100% 50%;
+}
+100% {
+	background-position: 0% 50%;
+}
+}
+
+.people:hover {
+  transform: scale(1.1);
 }
 
 .people h3 {
@@ -798,6 +1072,7 @@ section#about {
 	text-align: center;
 	font-weight: bold;
 	font-size: 36px;
+	margin-top: 10%;
 }
 
 /* works */
@@ -1101,7 +1376,7 @@ i.icon-white {
 }
 
 #MyImage {
-	border-radius: 12px;
+	border-radius: 50%;
 }
 
 /* =========================================================
@@ -1365,7 +1640,8 @@ i.icon-white {
 	}
 	
 	.navbar-inner .btn-navbar {
-		margin:20px 20px 0;
+		margin: 20px 0 0 auto;
+		font-size: 45%;
 	}
 	
 	.container {
@@ -1425,7 +1701,7 @@ i.icon-white {
 	}
 
 	#portfolio-wrap .grid {
-		width: 50%;
+		width: 48%;
 	}
 
 	#works img {
@@ -1443,8 +1719,23 @@ i.icon-white {
  padding: 1em 0;
 }
 
+.btn {
+	color: black !important;
+}
+
+#title-and-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 3%;
+}
+
 .navbar-inner h1 {
-	font-size: 4vw !important;
+	font-size: 12px !important;
+}
+
+.myname {
+	text-align: left;
 }
 
 .max-img {
