@@ -568,6 +568,7 @@ section.spacer blockquote cite {
 
 .acc-container {
   width: 450px;
+	max-width: 400px; 
   margin: 30px auto 0 auto;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -597,9 +598,20 @@ section.spacer blockquote cite {
 	box-sizing: border-box;
 }
 
+@media (max-width: 300px) {
+  .accordion-desc {
+    width: 100%;
+  }
+  .acc-container {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
 @media (max-width: 580px) {
   .acc-container {
-    width: 300px;
+    width: 240px;
   }
 }
 
