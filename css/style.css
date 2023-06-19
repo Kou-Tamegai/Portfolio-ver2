@@ -1118,13 +1118,13 @@ section#about {
 /* === Contact section === */
 
 #contact h1 {
-	font-size: 42px;
+	font-size: 38px;
 	font-weight: bold;
 }
 
 #contact p {
 	text-align: center;
-	font-size: 16px;
+	font-size: 10px;
 	font-weight: bold;
 }
 
